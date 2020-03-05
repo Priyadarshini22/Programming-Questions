@@ -1,0 +1,15 @@
+def maze(m,n):
+    length=m+n-2 
+    path=path1=path2=1
+    for i in range(1,length+1): 
+         path*=i
+    for i in range(1,m): 
+        path1*=i 
+    for i in range(1,n): 
+        path2*=i  
+    path1=path1*path2 
+    result=list(str(path//path1))
+    print("Path count ",int("".join(result[-8:])))
+rows=int(input("Enter rows"))
+columns=int(input("Enter columns"))
+maze(rows,columns)
