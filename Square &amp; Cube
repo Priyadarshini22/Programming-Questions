@@ -1,0 +1,19 @@
+from math import *
+def check_square(x): 
+    temp=x**(1/2) 
+    if round(temp)**2==x: 
+        return True 
+    else:
+        return False
+def check_cube(x): 
+    temp=x**(1/3)
+    if round(temp)**3==x: 
+         return True 
+    else: 
+         return False
+    
+number=int(input("Enter an Integer")) 
+for x in range(number,-1,-1):
+   if  check_square(x) and check_cube(x): 
+     print("Perfect Cube and Square",x) 
+     break
