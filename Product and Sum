@@ -1,0 +1,23 @@
+from itertools import permutations
+def check(sum,product,k): 
+    temp=[]
+    for i in range(1,product): 
+       if product%i==0 and i<=sum:  
+             count=0
+             while count<k:
+               temp.append(i)
+               count+=1 
+    no_integers=permutations(temp,k) 
+    for i in no_integers: 
+      sum_temp=0 
+      product_temp=1   
+      for integer in i:
+         sum_temp+=integer
+         product_temp*=integer  
+      if sum_temp==sum and product_temp==product:  
+           for result in i: 
+              print(result,end=" ")
+           exit()
+    print("NO")    
+sum,product,k=[int(x) for x in input().split()]
+check(sum,product,k)
